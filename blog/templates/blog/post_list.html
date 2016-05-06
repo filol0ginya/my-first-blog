@@ -4,18 +4,15 @@
 	</head>
 	<body>
 		<div>
-			<h1>Нарратив сумбурной жизни</h1>
-			<h6>вдоль по линии судьбы</h6>
+			<h1><a href="">Нарратив сумбурной жизни</a></h1>
+			<h3>вдоль по линии судьбы</h3>
 		</div>
-		<div>
-			<p>03.11.2015</p>
-			<h2>Первая запись</h2>
-			<p>Лорем ипсум</p>
-		</div>
-		<div>
-			<p>01.04.2016</p>
-			<h2>Вторая запись</h2>
-			<p>Лорем ипсум</p>
-		</div>
+		{% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    	{% endfor %}
 	</body>
     </html>
